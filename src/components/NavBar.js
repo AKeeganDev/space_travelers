@@ -32,13 +32,8 @@ const NavBar = () => {
       </div>
       <ul className="rightLinks">
         {links.map((link) => (
-          <li
-            key={link.id}
-          >
-            <NavLink
-              className={link.className}
-              to={link.path}
-            >
+          <li key={link.id}>
+            <NavLink className={link.className} to={link.path}>
               {link.text}
             </NavLink>
           </li>
