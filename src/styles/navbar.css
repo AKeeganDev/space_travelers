@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin: 0 2rem;
+  padding: 1rem 0;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 75px;
+  margin-right: 2rem;
+}
+
+.logoTitle {
+  font-size: 40px;
+}
+
+.rightLinks {
+  list-style: none;
+  display: flex;
+}
+
+a {
+  color: rgb(0, 89, 255);
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.missions {
+  border-right: 1px solid black;
+}
