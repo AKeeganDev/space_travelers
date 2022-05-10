@@ -2,7 +2,9 @@ import { useSelector } from 'react-redux';
 
 const Rockets = () => {
   const rocketData = useSelector((state) => state.rockets.value);
-  console.log(rocketData);
+  rocketData.forEach((element) => {
+    console.log(element.id);
+  });
   return <div>Rockets</div>;
 };
 
