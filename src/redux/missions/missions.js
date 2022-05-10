@@ -12,16 +12,30 @@ export const missionSlice = createSlice({
     value: [],
     status: null,
   },
-  reducers: {},
+  reducers: {
+    joinMission: (state, action) => {
+      console.log(action.payload);
+      const index = state.value.findIndex((id) => id.mission_id === action.payload);
+      console.log(index);
+      state.value[index].reserved = !state.value[index].reserved;
+    },
+  },
   extraReducers: {
     [getMissionsData.pending]: (state) => {
       state.status = 'loading';
     },
     [getMissionsData.fulfilled]: (state, action) => {
       state.status = 'success';
-      state.value = action.payload;
+      state.value = action.payload.map((mission) => ({
+        mission_id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+        reserved: false,
+      }));
     },
   },
 });
+
+export const { joinMission } = missionSlice.actions;
 
 export default missionSlice.reducer;
