@@ -10,11 +10,16 @@ export const missionSlice = createSlice({
   name: 'missions',
   initialState: {
     value: [],
+    status: null,
   },
   reducers: {},
   extraReducers: {
+    [getMissionsData.pending]: (state) => {
+      state.status = 'loading';
+    },
     [getMissionsData.fulfilled]: (state, action) => {
-      state.value.push(action.payload);
+      state.status = 'success';
+      state.value = action.payload;
     },
   },
 });
