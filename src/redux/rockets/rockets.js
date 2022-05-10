@@ -13,7 +13,7 @@ const rocketsSlice = createSlice({
   },
   reducers: {},
   extraReducers: {
-    [getData.fulfilled]: (state, action) => {
+    [getRocketData.fulfilled]: (state, action) => {
       state.value.push(action.payload);
     },
   },

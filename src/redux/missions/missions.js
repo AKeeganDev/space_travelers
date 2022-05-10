@@ -13,7 +13,7 @@ export const missionSlice = createSlice({
   },
   reducers: {},
   extraReducers: {
-    [getData.fulfilled]: (state, action) => {
+    [getMissionsData.fulfilled]: (state, action) => {
       state.value.push(action.payload);
     },
   },
