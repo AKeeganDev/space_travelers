@@ -10,10 +10,11 @@ const Rockets = () => {
         {rocketData.map((rocket) => (
           <li key={rocket.id}>
             <RocketCard
-              imgSource={rocket.flickr_images[0]}
+              rocketID={rocket.id}
+              imgSource={rocket.flickr_images}
               rocketName={rocket.rocket_name}
               rocketDescription={rocket.description}
-              reserved={Boolean(false)}
+              reserved={rocket.reserved}
             />
           </li>
         ))}
