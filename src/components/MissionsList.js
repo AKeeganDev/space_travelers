@@ -1,61 +1,47 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { getMissionsData, joinMission } from '../redux/missions/missions';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { joinMission } from '../redux/missions/missions';
 import './missions.css';
 
-const MissionsList = () => {
-  const { value, status } = useSelector((state) => state.missions);
+const MissionsList = (props) => {
+  const {
+    id, name, desc, joined,
+  } = props;
+  const [reserved, setReserved] = useState('');
+  const [isMember, setMember] = useState('Not a member');
   const dispatch = useDispatch();
-  const [isActive, setActive] = useState(false);
-  const [reserved, setReserved] = useState('notActive');
 
-  useEffect(() => {
-    if (status === 'success' || status === 'loading') {
-      return;
-    }
-    dispatch(getMissionsData());
-  }, [dispatch]);
-
-  const toggleClass = (id) => {
-    if (isActive) {
-      setReserved('active');
+  const toggleClass = (missionId) => {
+    if (joined) {
+      setReserved('');
+      setMember('Not a member');
     } else {
-      setReserved('notActive');
+      setReserved('joined');
+      setMember('Active member');
     }
-    setActive(!isActive);
-    dispatch(joinMission(id));
+    dispatch(joinMission(missionId));
   };
-
-  console.log(value);
-
-  const tableContent = value.map((mission) => (
-    <tr key={mission.mission_id}>
-      <td>{mission.mission_name}</td>
-      <td>{mission.description}</td>
-      <td>Not a member</td>
-      <td>
-        <button className={reserved} onClick={() => toggleClass(mission.mission_id)} type="button">
-          Join Mission
-        </button>
-      </td>
-    </tr>
-  ));
 
   return (
     <>
-      <table>
-        <tbody>
-          <tr>
-            <th>mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th> </th>
-          </tr>
-          {tableContent}
-        </tbody>
-      </table>
+      <td>{name}</td>
+      <td>{desc}</td>
+      <td className={reserved}>{isMember}</td>
+      <td>
+        <button onClick={() => toggleClass(id)} type="button">
+          Join Mission
+        </button>
+      </td>
     </>
   );
+};
+
+MissionsList.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  joined: PropTypes.bool.isRequired,
 };
 
 export default MissionsList;

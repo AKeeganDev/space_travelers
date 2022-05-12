@@ -14,10 +14,8 @@ export const missionSlice = createSlice({
   },
   reducers: {
     joinMission: (state, action) => {
-      console.log(action.payload);
       const index = state.value.findIndex((id) => id.mission_id === action.payload);
-      console.log(index);
-      state.value[index].reserved = !state.value[index].reserved;
+      state.value[index].joined = !state.value[index].joined;
     },
   },
   extraReducers: {
@@ -30,7 +28,7 @@ export const missionSlice = createSlice({
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
-        reserved: false,
+        joined: false,
       }));
     },
   },
