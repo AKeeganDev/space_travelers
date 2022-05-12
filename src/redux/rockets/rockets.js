@@ -15,6 +15,7 @@ const rocketsSlice = createSlice({
     changeRocketReservation: (state, action) => {
       const index = state.value.findIndex((rocket) => rocket.id === action.payload);
       state.value[index].reserved = !state.value[index].reserved;
+      return state;
     },
   },
   extraReducers: {
