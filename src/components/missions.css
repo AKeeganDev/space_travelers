@@ -38,15 +38,30 @@ span.joined {
   background-color: rgb(0, 140, 255);
   padding: 0 5px;
   color: white;
+  border-radius: 8px;
+  padding: 5px;
 }
 
 span.not-joined {
   background-color: #aaa4ac;
   padding: 0 5px;
   color: white;
+  border-radius: 8px;
+  padding: 5px;
 }
 
 button.not-joined {
   background: none;
-  width: 5rem;
+  border: 2px solid #aaa4ac;
+  border-radius: 8px;
+  width: 8rem;
+  padding: 5px;
+}
+
+button.joined {
+  background: none;
+  border: 2px solid red;
+  border-radius: 8px;
+  width: 8rem;
+  padding: 5px;
 }
