@@ -33,9 +33,11 @@ Coming Soon
 - Twitter: [@AkeeganDev](https://twitter.com/AkeeganDev)
 - LinkedIn: [AKeeganDev](https://linkedin.com/in/AKeeganDev)
 
-👤 **Fernando Saldana**
+👤 **Fernando Saldaña**
 
-
+- GitHub: [@fasaldana](https://github.com/fasaldana)
+- Twitter: [@Fernandosal98](https://twitter.com/Fernandosal98)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/fernando-saldana-8bbb89228/)
 
 ## 🤝 Contributing
 Contributions are always welcome. Please open an issue if you have any suggestions or wish to become a collaborator
