@@ -8,15 +8,21 @@ const MissionsList = (props) => {
   const {
     id, name, desc, joined,
   } = props;
-  const [reserved, setReserved] = useState('not-joined');
-  const [isMember, setMember] = useState('Not a member');
-  const [isJoined, setJoined] = useState('Join Mission');
+  const [reserved, setReserved] = useState(
+    joined ? 'joined' : 'not-joined',
+  );
+  const [isMember, setMember] = useState(
+    joined ? 'Active Member' : 'NOT A MEMBER',
+  );
+  const [isJoined, setJoined] = useState(
+    joined ? 'Leave Mission' : 'Join Mission',
+  );
   const dispatch = useDispatch();
 
   const toggleClass = (missionId) => {
     if (joined) {
       setReserved('not-joined');
-      setMember('Not a member');
+      setMember('NOT A MEMBER');
       setJoined('Join Mission');
     } else {
       setReserved('joined');

@@ -13,15 +13,19 @@ const missions = () => {
     dispatch(getMissionsData());
   }, [dispatch]);
 
+  const statusStyle = {
+    width: '9rem',
+  };
+
   return (
     <div className="mission-table">
       <table>
         <tbody>
           <tr>
-            <th>mission</th>
+            <th>Mission</th>
             <th>Description</th>
-            <th>Status</th>
-            <th> </th>
+            <th style={statusStyle}>Status</th>
+            <th style={statusStyle}> </th>
           </tr>
           {value.map((mission) => (
             <tr key={mission.mission_id}>
