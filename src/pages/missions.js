@@ -14,7 +14,7 @@ const missions = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="mission-table">
       <table>
         <tbody>
           <tr>
@@ -23,19 +23,19 @@ const missions = () => {
             <th>Status</th>
             <th> </th>
           </tr>
+          {value.map((mission) => (
+            <tr key={mission.mission_id}>
+              <MissionsList
+                id={mission.mission_id}
+                name={mission.mission_name}
+                desc={mission.description}
+                joined={mission.joined}
+              />
+            </tr>
+          ))}
         </tbody>
       </table>
-      {value.map((mission) => (
-        <tr key={mission.mission_id}>
-          <MissionsList
-            id={mission.mission_id}
-            name={mission.mission_name}
-            desc={mission.description}
-            joined={mission.joined}
-          />
-        </tr>
-      ))}
-    </>
+    </div>
   );
 };
 

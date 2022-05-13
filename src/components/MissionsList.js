@@ -8,29 +8,34 @@ const MissionsList = (props) => {
   const {
     id, name, desc, joined,
   } = props;
-  const [reserved, setReserved] = useState('');
+  const [reserved, setReserved] = useState('not-joined');
   const [isMember, setMember] = useState('Not a member');
+  const [isJoined, setJoined] = useState('Join Mission');
   const dispatch = useDispatch();
 
   const toggleClass = (missionId) => {
     if (joined) {
-      setReserved('');
+      setReserved('not-joined');
       setMember('Not a member');
+      setJoined('Join Mission');
     } else {
       setReserved('joined');
       setMember('Active member');
+      setJoined('Leave Mission');
     }
     dispatch(joinMission(missionId));
   };
 
   return (
     <>
-      <td>{name}</td>
+      <td className="mission-name">{name}</td>
       <td>{desc}</td>
-      <td className={reserved}>{isMember}</td>
+      <td className="status-table">
+        <span className={reserved}>{isMember}</span>
+      </td>
       <td>
-        <button onClick={() => toggleClass(id)} type="button">
-          Join Mission
+        <button className={reserved} onClick={() => toggleClass(id)} type="button">
+          {isJoined}
         </button>
       </td>
     </>
