@@ -1,0 +1,26 @@
+.listContainer {
+  margin-top: 10px;
+}
+
+.listName {
+  font-size: 30px;
+  padding: 5px 0;
+}
+
+.listItem {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.profileContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.missionList,
+.rocketList {
+  list-style: none;
+  width: 30vw;
+  margin-top: 5px;
+}

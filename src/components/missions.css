@@ -1,0 +1,65 @@
+.mission-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  display: flex;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-top: 2rem;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+  width: fit-content;
+}
+
+.mission-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.status-table {
+  width: 3rem;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+span.joined {
+  width: fit-content;
+  background-color: rgb(0, 140, 255);
+  color: white;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+span.not-joined {
+  background-color: #aaa4ac;
+  color: white;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+button.not-joined {
+  background: none;
+  border: 2px solid #aaa4ac;
+  border-radius: 8px;
+  width: 8rem;
+  padding: 5px;
+}
+
+button.joined {
+  background: none;
+  border: 2px solid red;
+  border-radius: 8px;
+  width: 8rem;
+  padding: 5px;
+}

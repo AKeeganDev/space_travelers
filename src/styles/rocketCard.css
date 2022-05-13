@@ -1,0 +1,48 @@
+.rocketCard {
+  display: flex;
+  padding: 2rem;
+  gap: 10px;
+}
+
+.rocketImage {
+  max-width: 20rem;
+}
+
+.rocketTitle {
+  font-size: 32px;
+}
+
+.rocketDetails {
+  margin: 10px 0;
+  line-height: 1.5rem;
+}
+
+.reserveButton {
+  padding: 5px;
+  margin-top: 5px;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+.notReserved {
+  background-color: rgb(0, 81, 255);
+  color: white;
+}
+
+.reserved {
+  color: black;
+  border: 1px solid black;
+}
+
+.badge {
+  width: fit-content;
+  background-color: rgb(0, 140, 255);
+  padding: 0 5px;
+  color: white;
+  display: none;
+}
+
+.visible {
+  display: block;
+}
